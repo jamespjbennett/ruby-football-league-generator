@@ -12,6 +12,10 @@ RSpec.describe "Fixture" do
       expect(manu_liverpool.away_team).to_not be_nil
     end
 
+    it 'should calculate a score' do
+      binding.pry
+      manu_liverpool.play
+    end
 
   end
 end

@@ -1,4 +1,4 @@
-require './classes/player.rb'
+require './lib/player.rb'
 
 
 RSpec.shared_context "players" do
@@ -21,17 +21,17 @@ RSpec.shared_context "players" do
   }
 
   let(:man_united) {
-    [Player.new("Rashford", striker, 87, 50),
+    [Player.new("Rashford", striker, 84, 50),
     Player.new("De Gea", keeper, 0, 93),
     Player.new("Wan Bissaka", defender, 57, 89),
     Player.new("Maguire", defender, 57, 87),
     Player.new("Lindelof", defender, 50, 82),
     Player.new("Shaw", defender, 55, 80),
     Player.new("Mctominay", midfielder, 65, 70),
-    Player.new("Fred", midfielder, 63, 68),
+    Player.new("Fred", midfielder, 58, 68),
     Player.new("Martial", striker, 85, 45),
-    Player.new("James", striker, 80, 52),
-    Player.new("Pogba", midfielder, 83, 50)]
+    Player.new("James", striker, 78, 52),
+    Player.new("Pogba", midfielder, 80, 50)]
   }
 
   let(:liverpool) {

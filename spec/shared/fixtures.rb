@@ -1,4 +1,4 @@
-require './classes/fixture.rb'
+require './lib/fixture.rb'
 require './spec/shared/teams.rb'
 
 
