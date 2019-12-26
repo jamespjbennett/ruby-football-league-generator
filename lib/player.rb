@@ -1,11 +1,12 @@
 class Player
 
-  attr_accessor :name, :position, :attack, :defence
+  attr_accessor :name, :position, :scoring, :creating, :defence
 
-  def initialize (name, position, attack, defence)
+  def initialize (name, position, scoring, creating, defence)
     @name = name
     @position = position
-    @attack = attack
+    @scoring = scoring
+    @creating = creating
     @defence = defence
   end
 
@@ -15,7 +16,7 @@ end
 class Position
 
   attr_accessor :name
-  
+
   def initialize (name)
     @name = name
   end

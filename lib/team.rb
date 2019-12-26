@@ -5,14 +5,16 @@ class Team
   def initialize(name, players)
     @name = name
     @players = players
-    @attack_total = attack_total
-    @defence_total = defence_total
     @xg_for = xg_for
     @xg_against = xg_against
   end
 
   def attack_total
-    total_attack = @players.sum(&:attack)
+    @players.sum(&:scoring)
+  end
+
+  def creative_total
+    @players.sum(&:creating)
   end
 
   def defence_total
@@ -20,10 +22,11 @@ class Team
   end
 
   def xg_for
-    attack_total / 324.3589
+    ((attack_total + creative_total) - 1129).to_f / 156
   end
 
   def xg_against
-    defence_total / 1388.84
+    adjusted_defence = 1100 - defence_total
+    (adjusted_defence - 132).to_f / 200
   end
 end

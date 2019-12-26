@@ -13,8 +13,18 @@ RSpec.describe "Fixture" do
     end
 
     it 'should calculate a score' do
+      # puts manu_liverpool.play
+      # puts manu_liverpool.play
+      # puts manu_liverpool.play
+      # puts manu_liverpool.play
+      # puts manu_liverpool.play
       binding.pry
-      manu_liverpool.play
+      puts watford_liverpool.play
+      puts watford_liverpool.play
+      puts watford_liverpool.play
+      puts watford_liverpool.play
+      puts watford_liverpool.play
+
     end
 
   end

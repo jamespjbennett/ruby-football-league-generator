@@ -15,7 +15,7 @@ RSpec.describe "Player" do
       expect(example_player.position.name).to eq("Striker")
     end
     it 'should have an attack rating' do
-      expect(example_player.attack).to eq(87)
+      expect(example_player.scoring).to eq(87)
     end
     it 'should have an defence rating' do
       expect(example_player.defence).to eq(50)
