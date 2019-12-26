@@ -1,6 +1,7 @@
 require './lib/fixture.rb'
+require './lib/score_calculater.rb'
 require './spec/shared/teams.rb'
-
+require 'pry'
 
 
 RSpec.shared_context "fixtures" do
