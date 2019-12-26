@@ -15,6 +15,4 @@ RSpec.shared_context "fixtures" do
     Fixture.new(team_watford,  team_liverpool)
   }
 
-
-
 end

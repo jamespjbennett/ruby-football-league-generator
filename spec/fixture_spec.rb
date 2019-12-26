@@ -13,19 +13,9 @@ RSpec.describe "Fixture" do
     end
 
     it 'should calculate a score' do
-      # puts manu_liverpool.play
-      # puts manu_liverpool.play
-      # puts manu_liverpool.play
-      # puts manu_liverpool.play
-      # puts manu_liverpool.play
-      binding.pry
-      puts watford_liverpool.play
-      puts watford_liverpool.play
-      puts watford_liverpool.play
-      puts watford_liverpool.play
-      puts watford_liverpool.play
-
+      watford_liverpool.play
+      expect(watford_liverpool.home_team_goals).to_not be_nil
+      expect(watford_liverpool.away_team_goals).to_not be_nil
     end
-
   end
 end
