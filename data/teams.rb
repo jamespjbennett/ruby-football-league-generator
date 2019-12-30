@@ -1,27 +1,15 @@
+require './lib/team.rb'
 require './lib/player.rb'
-require 'rspec'
 
-RSpec.shared_context "players" do
+module Teams
 
-  let(:keeper){
-    Position.new("Goalkeeper")
-  }
-  let(:defender){
-    Position.new("Defender")
-  }
-  let(:midfielder){
-    Position.new("Midfielder")
-  }
-  let(:striker){
-    Position.new("Striker")
-  }
+  keeper     = Position.new("Goalkeeper")
+  defender   = Position.new("Defender")
+  midfielder = Position.new("Midfielder")
+  striker    = Position.new("Striker")
 
-  let(:example_player){
-    Player.new("Test", striker, 87, 80, 50)
-  }
-
-  let(:man_united) {
-    [Player.new("Rashford", striker, 84, 82, 50),
+  @man_united = [
+    Player.new("Rashford", striker, 84, 82, 50),
     Player.new("De Gea", keeper, 0, 15, 93),
     Player.new("Wan Bissaka", defender, 57, 60, 89),
     Player.new("Maguire", defender, 57, 50, 87),
@@ -31,11 +19,11 @@ RSpec.shared_context "players" do
     Player.new("Fred", midfielder, 55, 65, 68),
     Player.new("Martial", striker, 85, 82,  45),
     Player.new("James", striker, 78, 85,  52),
-    Player.new("Pogba", midfielder, 80, 90, 50)]
-  }
+    Player.new("Pogba", midfielder, 80, 90, 50)
+  ]
 
-  let(:liverpool) {
-    [Player.new("Allison", keeper, 0, 20, 93),
+  @liverpool = [
+    Player.new("Allison", keeper, 0, 20, 93),
     Player.new("Alexander Arnold", defender, 70, 80, 80),
     Player.new("Van Dijk", defender, 69, 55, 94),
     Player.new("Matip", defender, 60, 45, 84),
@@ -45,11 +33,11 @@ RSpec.shared_context "players" do
     Player.new("Henderson", midfielder, 69, 75, 72),
     Player.new("Mane", striker, 91, 85,  50),
     Player.new("Firmino", midfielder, 85, 90,  56),
-    Player.new("Salah", midfielder, 92, 85,  45)]
-  }
+    Player.new("Salah", midfielder, 92, 85,  45)
+  ]
 
-  let(:watford) {
-    [Player.new("Foster", keeper, 0, 20, 1),
+  @watford = [
+    Player.new("Foster", keeper, 0, 20, 1),
     Player.new("Mariappa", defender, 50, 55, 65),
     Player.new("Kabasele", defender, 55, 45, 72),
     Player.new("Cathcart", defender, 55, 45, 70),
@@ -59,6 +47,19 @@ RSpec.shared_context "players" do
     Player.new("Sarr", midfielder, 72, 75,45),
     Player.new("Doucore", midfielder, 70, 74, 55),
     Player.new("Deulofeu", midfielder, 73, 79, 40),
-    Player.new("Deeney", midfielder, 78, 67, 45)]
-  }
+    Player.new("Deeney", midfielder, 78, 67, 45)
+  ]
+
+  def self.man_united
+    Team.new("Man United", @man_united)
+  end
+
+  def self.watford
+    Team.new("Liverpool", @liverpool)
+  end
+
+  def self.liverpool
+    Team.new("Watford", @watford)
+  end
+
 end

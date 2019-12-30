@@ -1,3 +1,5 @@
+require './lib/score_calculater.rb'
+
 class Fixture
 
   attr_accessor :home_team, :away_team, :home_team_goals, :away_team_goals
@@ -11,8 +13,9 @@ class Fixture
   end
 
   def play
-    @home_team_goals = @score_calculater.calculate_goals(home_team, away_team)
-    @away_team_goals = @score_calculater.calculate_goals(away_team, home_team)
+    @home_team_goals = @score_calculater.calculate_goals(@home_team, @away_team)
+    @away_team_goals = @score_calculater.calculate_goals(@away_team, @home_team)
+    puts "#{@home_team.name} #{@home_team_goals} #{@away_team.name} #{@away_team_goals}"
   end
 
 

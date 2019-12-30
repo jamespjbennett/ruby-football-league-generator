@@ -1,0 +1,5 @@
+require './lib/fixture.rb'
+require './data/teams.rb'
+require 'pry'
+
+Fixture.new(Teams.liverpool, Teams.watford).play
