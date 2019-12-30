@@ -62,4 +62,10 @@ module Teams
     Team.new("Watford", @watford)
   end
 
+  def self.all
+    [Team.new("Man United", @man_united),
+    Team.new("Liverpool", @liverpool),
+    Team.new("Watford", @watford)]
+  end
+
 end

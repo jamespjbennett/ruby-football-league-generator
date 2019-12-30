@@ -1,0 +1,9 @@
+require './lib/fixture.rb'
+require './data/teams.rb'
+require 'pry'
+
+all_teams = Teams.all
+team_1 = all_teams.sample
+all_teams.delete(team_1)
+team_2 =  all_teams.sample
+Fixture.new(team_1, team_2).play
