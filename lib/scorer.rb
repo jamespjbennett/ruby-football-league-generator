@@ -1,5 +1,5 @@
 class Scorer
-  def call
-    
+  def call(team)
+    team.players.sample
   end
 end

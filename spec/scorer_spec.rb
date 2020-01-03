@@ -1,5 +1,5 @@
 require 'shared/teams.rb'
-require 'lib/scorer.rb'
+require './lib/scorer.rb'
 require 'pry'
 
 RSpec.describe "Scorer" do
@@ -9,7 +9,7 @@ RSpec.describe "Scorer" do
   describe 'Calculate scorer' do
 
     it 'should return a scorer for the number of goals a team has scored' do
-      expect(Scorer.new(team_man_united).class).to eq(Player)
+      expect(Scorer.new.call(team_man_united).class).to eq(Player)
     end
 
   end
