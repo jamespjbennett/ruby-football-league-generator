@@ -20,6 +20,14 @@ RSpec.shared_context "players" do
     Player.new("Test", striker, 87, 80, 50)
   }
 
+  let(:less_likely_scorer){
+    Player.new("Test", defender, 50, 0, 0)
+  }
+
+  let(:more_likely_scorer){
+    Player.new("Test", striker, 100, 0, 0)
+  }
+
   let(:man_united) {
     [Player.new("Rashford", striker, 84, 82, 50),
     Player.new("De Gea", keeper, 0, 15, 93),

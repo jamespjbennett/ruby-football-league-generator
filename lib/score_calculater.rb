@@ -26,6 +26,8 @@ class ScoreCalculater
 end
 
 
+
+
 require './lib/goal.rb'
 
 # class to convert number of goals into goal objects
