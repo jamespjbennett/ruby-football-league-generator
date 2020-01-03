@@ -25,7 +25,7 @@ RSpec.shared_context "players" do
   }
 
   let(:more_likely_scorer){
-    Player.new("Test", striker, 100, 0, 0)
+    Player.new("Test", striker, 98, 0, 0)
   }
 
   let(:man_united) {
