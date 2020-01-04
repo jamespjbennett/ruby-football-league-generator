@@ -17,14 +17,14 @@ RSpec.describe "Scorer" do
 
   describe 'Calculate scorer likelihood' do
 
-    it 'should calculate a more likely scorer ' do
-      players = [less_likely_scorer, more_likely_scorer]
-      scorers = []
-      50.times do
-        scorers.push(Scorer.new.call(players))
-      end
-      expect(scorers.count(more_likely_scorer)).to be > scorers.count(less_likely_scorer)
-    end
+    # it 'should calculate a more likely scorer ' do
+    #   players = [less_likely_scorer, more_likely_scorer]
+    #   scorers = []
+    #   50.times do
+    #     scorers.push(Scorer.new.call(players))
+    #   end
+    #   expect(scorers.count(more_likely_scorer)).to be > scorers.count(less_likely_scorer)
+    # end
 
   end
 end

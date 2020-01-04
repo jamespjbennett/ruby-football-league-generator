@@ -30,7 +30,7 @@ RSpec.shared_context "players" do
 
   let(:man_united) {
     [Player.new("Rashford", striker, 84, 82, 50),
-    Player.new("De Gea", keeper, 0, 15, 93),
+    Player.new("De Gea", keeper, 40, 15, 93),
     Player.new("Wan Bissaka", defender, 57, 60, 89),
     Player.new("Maguire", defender, 57, 50, 87),
     Player.new("Lindelof", defender, 50, 47, 82),
@@ -43,7 +43,7 @@ RSpec.shared_context "players" do
   }
 
   let(:liverpool) {
-    [Player.new("Allison", keeper, 0, 20, 93),
+    [Player.new("Allison", keeper, 40, 20, 93),
     Player.new("Alexander Arnold", defender, 70, 80, 80),
     Player.new("Van Dijk", defender, 69, 55, 94),
     Player.new("Matip", defender, 60, 45, 84),
@@ -57,7 +57,7 @@ RSpec.shared_context "players" do
   }
 
   let(:watford) {
-    [Player.new("Foster", keeper, 0, 20, 1),
+    [Player.new("Foster", keeper, 40, 20, 1),
     Player.new("Mariappa", defender, 50, 55, 65),
     Player.new("Kabasele", defender, 55, 45, 72),
     Player.new("Cathcart", defender, 55, 45, 70),

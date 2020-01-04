@@ -25,8 +25,8 @@ RSpec.describe "Player" do
       liv_goals = 0
       20.times do
         score_calculater = ScoreCalculater.new
-        watford_fixture_goals = score_calculater.calculate_goals(team_watford, team_liverpool)
-        liv_fixture_goals = score_calculater.calculate_goals(team_liverpool, team_watford)
+        watford_fixture_goals = score_calculater.calculate_goals(team_watford, team_liverpool).length
+        liv_fixture_goals = score_calculater.calculate_goals(team_liverpool, team_watford).length
         watford_goals += watford_fixture_goals
         liv_goals += liv_fixture_goals
       end
