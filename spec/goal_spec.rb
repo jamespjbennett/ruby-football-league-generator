@@ -7,9 +7,16 @@ RSpec.describe "Goal" do
   include_context "teams"
 
   describe 'Create Goal Object' do
+    before(:each) do
+      @goal = Goal.new(team_man_united)
+    end
 
     it 'should initialize with a team' do
-      expect(Goal.new(team_man_united).team).to eq(team_man_united)
+      expect(@goal.team).to eq(team_man_united)
+    end
+
+    it 'should intitalize with a calculated player' do
+      expect(@goal.scorer.class).to eq(Player)
     end
 
   end
