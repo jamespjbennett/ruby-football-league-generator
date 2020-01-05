@@ -35,7 +35,9 @@ require './lib/goal.rb'
 class GoalGenerator
 
   def call(attack_team,total_goals)
-    Array.new(total_goals, Goal.new(attack_team))
+    goal_array = []
+    total_goals.times {goal_array.push(Goal.new(attack_team))}
+    goal_array
   end
 
 end

@@ -6,4 +6,6 @@ all_teams = Teams.all
 team_1 = all_teams.sample
 all_teams.delete(team_1)
 team_2 =  all_teams.sample
-Fixture.new(team_1, team_2, ScoreFormatter.new(team_1, team_2)).play
+fixture = Fixture.new(team_1, team_2, ScoreFormatter.new(team_1, team_2))
+fixture.play
+fixture.display_result
