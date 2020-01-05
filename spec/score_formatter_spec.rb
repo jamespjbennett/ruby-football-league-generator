@@ -9,17 +9,22 @@ RSpec.describe "ScoreFormatter" do
 
   describe 'Format score correctly' do
     before(:each) do
-      @goal_manu = Goal.new(team_man_united)
-      @goal_liverpool = Goal.new(team_liverpool)
+      @manu_goals = [Goal.new(team_man_united), Goal.new(team_man_united)]
+      @liv_goals = [Goal.new(team_liverpool)]
+      score_formatter = ScoreFormatter.new
+      @formatted_score = score_formatter.call(@manu_goals, @liv_goals)
     end
 
-    it 'should initialize with a team' do
-      expect(@goal.team).to eq(team_man_united)
+    it 'should display the number of goals for each team' do
+      expect(@formatted_score).to include('1')
+      expect(@formatted_score).to include('2')
     end
 
-    # it 'should intitalize with a calculated player' do
-    #   expect(@goal.scorer.class).to eq(Player)
-    # end
+    it 'should include all scorer names' do
+      expect(@formatted_score).to include(@manu_goals[0].scorer.name)
+      expect(@formatted_score).to include(@manu_goals[1].scorer.name)
+      expect(@formatted_score).to include(@liv_goals[0].scorer.name)
+    end
 
   end
 
