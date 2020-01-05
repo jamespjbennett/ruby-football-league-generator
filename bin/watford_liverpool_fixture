@@ -2,4 +2,4 @@ require './lib/fixture.rb'
 require './data/teams.rb'
 require 'pry'
 
-Fixture.new(Teams.liverpool, Teams.watford).play
+Fixture.new(Teams.liverpool, Teams.watford, ScoreFormatter.new).play
