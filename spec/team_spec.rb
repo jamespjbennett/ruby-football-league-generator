@@ -24,6 +24,13 @@ RSpec.describe "Team" do
       expect(team_man_united.xg_against.class).to eq(Float)
     end
 
+  end
 
+  describe 'Increment Points' do
+    it 'should Increment points total with a given number' do
+      current_points = team_man_united.points
+      team_man_united.increment_points(3)
+      expect(team_man_united.points).to eq(current_points + 3)
+    end
   end
 end

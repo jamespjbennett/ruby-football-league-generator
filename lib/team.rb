@@ -1,12 +1,15 @@
 class Team
 
-  attr_accessor :max_goals_for, :max_goals_against, :attack_total, :defence_total, :players, :name
+  attr_reader :xg_for, :xg_against, :players, :name
+  attr_accessor :points
+
 
   def initialize(name, players)
     @name = name
     @players = players
     @xg_for = xg_for
     @xg_against = xg_against
+    @points = 0
   end
 
   def attack_total
@@ -28,5 +31,9 @@ class Team
   def xg_against
     adjusted_defence = 1100 - defence_total
     (adjusted_defence - 132).to_f / 200
+  end
+
+  def increment_points(number)
+    @points += number
   end
 end
