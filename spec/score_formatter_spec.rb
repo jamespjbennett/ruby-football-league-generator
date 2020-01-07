@@ -11,7 +11,7 @@ RSpec.describe "ScoreFormatter" do
     before(:each) do
       @manu_goals = [Goal.new(team_man_united), Goal.new(team_man_united)]
       @liv_goals = [Goal.new(team_liverpool)]
-      score_formatter = ScoreFormatter.new(team_man_united, team_liverpool)
+      score_formatter = ScoreString.new(team_man_united, team_liverpool)
       @formatted_score = score_formatter.call(@manu_goals, @liv_goals)
     end
 
