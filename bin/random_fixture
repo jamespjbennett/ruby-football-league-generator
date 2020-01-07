@@ -9,3 +9,5 @@ team_2 =  all_teams.sample
 fixture = Fixture.new(team_1, team_2)
 fixture.play
 fixture.display_result(ScoreString.new(team_1, team_2))
+score_object = fixture.display_result(ScoreObject.new(team_1, team_2))
+binding.pry

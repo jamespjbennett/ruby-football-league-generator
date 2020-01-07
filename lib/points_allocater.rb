@@ -2,31 +2,27 @@ require './lib/fixture.rb'
 
 class PointsAllocater
 
-  attr_reader :points
-
-  def initialize(home_team, away_team)
-    @home_team = home_team
-    @away_team = away_team
-    @points = {home_team => 1, away_team => 1}
-
+  def initialize(score_object)
+    @score_object = score_object
   end
 
-  def allocate(home_team_goals, away_team_goals)
-    home_team_total_goals = home_team_goals.length
-    away_team_total_goals = away_team_goals.length
-    if home_team_total_goals !=  away_team_total_goals
-      home_team_points = home_team_total_goals > away_team_total_goals ? 3 : 0
-      away_team_points = away_team_total_goals > home_team_total_goals ? 3 : 0
-      @points[@home_team] = home_team_points
-      @points[@away_team] = away_team_points
+  def perform
+    if @score_object.values.uniq.length == 1
+      allocate_draw
+    else
+      allocate_win
     end
   end
 
-  def max_score
+  def allocate_win
+    @score_object.key(max_goals).increment_points(3)
+  end
+
+  def max_goals
     @score_object.values.max
   end
 
-  def min_score
-    @score_object.values.min
+  def allocate_draw
+    @score_object.keys.each{|team| team.increment_points(1)}
   end
 end

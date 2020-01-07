@@ -7,21 +7,19 @@ RSpec.describe "Points Allocater" do
   # INCLUDE TEST DATA SHEET
   include_context "teams"
 
-  describe 'Points allocater initizliation' do
+  describe 'Allocating correct amount of points' do
     before(:each) do
       @score_object = {
         team_man_united => 1,
         team_liverpool => 2
       }
-      @manu_goals = [Goal.new(team_man_united)]
-      @liv_goals = [Goal.new(team_liverpool), Goal.new(team_liverpool)]
-      @points_allocater = PointsAllocater.new(team_man_united, team_liverpool)
+      @points_allocater = PointsAllocater.new(@score_object)
+      @liverpool_points = 0
     end
 
-    it 'should have allocate correct pointw for each team ' do
-      @points_allocater.allocate(@manu_goals, @liv_goals )
-      expect(@points_allocater.points[team_man_united]).to eq(0)
-      expect(@points_allocater.points[team_liverpool]).to eq(3)
+    it 'should have allocate 3 points for winning team ' do
+      @points_allocater.perform
+      expect(team_liverpool.points).to eq(@liverpool_points + 3)
     end
 
   end
