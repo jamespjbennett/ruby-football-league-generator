@@ -1,6 +1,7 @@
 class Player
 
-  attr_accessor :name, :position, :scoring, :creating, :defence
+  attr_reader :name, :position, :scoring, :creating, :defence
+  attr_accessor :goals
 
   def initialize (name, position, scoring, creating, defence)
     @name = name
@@ -8,8 +9,12 @@ class Player
     @scoring = scoring
     @creating = creating
     @defence = defence
+    @goals = 0
   end
 
+  def increment_goals
+    @goals += 1
+  end
 end
 
 
